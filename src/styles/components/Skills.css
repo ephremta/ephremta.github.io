@@ -1,0 +1,38 @@
+.skills {
+  background-color: #f4f4f9;
+  padding: 60px 0;
+}
+
+.skills .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.skills .section-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.skills .skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.skills .skill {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.skills .skill:hover {
+  background-color: #0077b6;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}

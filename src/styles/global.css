@@ -1,0 +1,83 @@
+/* src/styles/global.css */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f7f9fb;
+  color: #333;
+  line-height: 1.6;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1d3557;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  max-width: 1200px; /* Match the width of the body content */
+  margin: 0 auto; /* Centers the navbar horizontally */
+}
+
+.navbar a {
+  color: #f1faee;
+  text-decoration: none;
+  margin: 0 18px;
+  padding: 6px 12px; /* Slightly increased padding for better clickability */
+  border-radius: 4px; /* Slightly smaller radius for a more refined look */
+  font-weight: 500; /* Slightly bolded text */
+  font-size: 1.05rem; /* Slightly larger font size for readability */
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease; /* Added smooth transform for hover */
+}
+
+.navbar a:hover {
+  background: #457b9d;
+  transform: scale(1.05); /* Slight zoom effect on hover for elegance */
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section {
+  width: 100%;
+  max-width: 1200px;
+  padding: 60px 20px;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #1d3557;
+  color: #f1faee;
+  width: 100%;
+  margin-top: 40px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 20px; /* Reduced padding on smaller screens */
+    max-width: 100%; /* Ensure full width on small screens */
+  }
+
+  .navbar .nav-links {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .navbar .nav-links li {
+    margin-left: 0;
+    margin-top: 12px; /* Adjust spacing for better appearance on smaller screens */
+  }
+}
