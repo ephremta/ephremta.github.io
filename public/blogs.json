@@ -1,0 +1,24 @@
+[
+    {
+      "id": 1,
+      "title": "The Future of AI in Finance",
+      "date": "2024-12-01",
+      "summary": "An exploration of how AI is transforming the financial industry.",
+      "content": "AI is poised to revolutionize the financial sector, improving decision-making, automation, and customer service..."
+    },
+    {
+      "id": 2,
+      "title": "Building Scalable SaaS Applications",
+      "date": "2024-12-02",
+      "summary": "A guide to building scalable SaaS platforms with modern tools.",
+      "content": "When designing SaaS applications, scalability is crucial. From microservices to cloud-native architectures, there are many approaches..."
+    },
+    {
+      "id": 3,
+      "title": "Data Science in E-commerce",
+      "date": "2024-12-03",
+      "summary": "How data science is optimizing e-commerce platforms and customer experiences.",
+      "content": "E-commerce businesses are leveraging data science to enhance customer experience, improve personalization, and drive sales growth..."
+    }
+  ]
+  

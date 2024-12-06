@@ -53,3 +53,16 @@
 .projects .project .btn:hover {
   background-color: #005f80;
 }
+.btn.view-more {
+  background-color: #ff6b6b;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.btn.view-more:hover {
+  background-color: #d9534f;
+}
+
+.project-links {
+  margin-bottom: 10px;
+}
