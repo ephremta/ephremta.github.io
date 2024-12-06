@@ -7,10 +7,11 @@ const About = () => {
     <div className='about'>
       <h2>About Me</h2>
       <p>
-        I’m a senior engineer with expertise in building scalable,
-        high-performance solutions for modern applications. With a passion for
-        clean code and innovative designs, I strive to create impactful
-        products.
+        Passionate data scientist with a robust background in credit scoring,
+        machine learning, and natural language processing (NLP), aiming to
+        leverage advanced analytics to drive business insights, optimize
+        decision-making processes, and foster innovation in dynamic
+        environments.
       </p>
     </div>
   );
