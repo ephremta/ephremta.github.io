@@ -4,27 +4,35 @@ import '../styles/components/Experience.css';
 const experienceData = [
   {
     jobTitle: 'Senior Data Scientist',
-    company: 'ABC Corp.',
-    location: 'New York, NY',
+    company: 'Kifiya Financial Technologies',
+    location: 'Ethiopia',
     duration: 'Jan 2022 - Present',
     description:
-      'Led a team to develop AI-driven solutions for optimizing financial processes. Built predictive models for risk assessment and fraud detection using machine learning.'
+      'Led credit scoring initiatives and implemented MLOps practices for digital lending platforms. Developed alternative data-driven credit scoring models, ensuring operational efficiency and scalability.'
   },
   {
     jobTitle: 'Data Scientist',
-    company: 'XYZ Ltd.',
-    location: 'San Francisco, CA',
+    company: 'Tenacious Intelligence Corporation',
+    location: 'Remote',
     duration: 'Mar 2019 - Dec 2021',
     description:
-      'Developed machine learning models and implemented data pipelines for analyzing large datasets. Worked closely with the finance department to create data-driven insights for decision-making.'
+      'Developed machine learning models for risk assessment and fraud detection, while optimizing data pipelines for large-scale analytics. Delivered business intelligence insights to drive decision-making.'
   },
   {
-    jobTitle: 'Junior Data Analyst',
-    company: 'Tech Solutions',
-    location: 'Boston, MA',
+    jobTitle: 'Text Data Analytics Team Leader',
+    company: 'Ethiopian Artificial Intelligence Institute',
+    location: 'Ethiopia',
     duration: 'Jun 2017 - Feb 2019',
     description:
-      'Assisted in the collection, cleaning, and analysis of data to improve company processes. Generated reports and insights that helped streamline business operations.'
+      'Led projects in Natural Language Processing, implemented data pipelines for machine translation, and contributed to advancements in text analytics for Amharic language processing.'
+  },
+  {
+    jobTitle: 'Lecturer',
+    company: 'Jimma University',
+    location: 'Ethiopia',
+    duration: 'Sep 2014 - May 2017',
+    description:
+      'Developed and taught data science curriculum, mentored students in data analytics and machine learning, and conducted research in natural language processing.'
   }
 ];
 

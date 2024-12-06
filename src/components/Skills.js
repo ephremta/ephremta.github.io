@@ -2,19 +2,26 @@ import React from 'react';
 import '../styles/components/Skills.css';
 
 const skills = [
-  'JavaScript',
-  'React',
-  'Node.js',
   'Python',
-  'Machine Learning',
-  'SQL',
+  'Java',
+  'Shell Scripting',
+  'Scikit-learn',
+  'TensorFlow',
+  'MLflow',
+  'Kubeflow',
+  'Kedro',
+  'Redash',
+  'Pandas',
+  'FastAPI',
+  'Flask',
+  'AWS (S3, Lambda, EC2, RDS, EKS, CloudFormation)',
   'Docker',
   'Kubernetes',
-  'AWS',
-  'MongoDB',
   'Git',
-  'RESTful APIs',
-  'GraphQL'
+  'Terraform',
+  'ArgoCD',
+  'GitOps',
+  'Jira'
 ];
 
 const Skills = () => (
