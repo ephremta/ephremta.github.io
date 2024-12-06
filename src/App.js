@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll'; // Importing react-scroll Link
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
@@ -7,22 +8,72 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Experience from './components/Experience';
 import BlogDetail from './components/BlogDetail';
-import Blog from './components/Blog';
+import Blogs from './components/Blogs'; // Updated import for Blogs
+
 import './styles/global.css';
 
 const App = () => {
-  return (     
+  return (
     <Router>
       <div className='app'>
         {/* Navigation */}
         <nav className='navbar'>
-          <a href='#hero'>Home</a>
-          <a href='#about'>About</a>
-          <a href='#skills'>Skills</a>
-          <a href='#projects'>Projects</a>
-          <a href='#experience'>Experience</a>
-          <a href='#contact'>Contact</a>
-          <a href='#blog'>Blog</a> {/* Link to the Blog List page */}
+          <ScrollLink
+            to='hero'
+            smooth={true}
+            duration={500}
+            className='navbar-link'
+          >
+            Home
+          </ScrollLink>
+          <ScrollLink
+            to='about'
+            smooth={true}
+            duration={500}
+            className='navbar-link'
+          >
+            About
+          </ScrollLink>
+          <ScrollLink
+            to='skills'
+            smooth={true}
+            duration={500}
+            className='navbar-link'
+          >
+            Skills
+          </ScrollLink>
+          <ScrollLink
+            to='projects'
+            smooth={true}
+            duration={500}
+            className='navbar-link'
+          >
+            Projects
+          </ScrollLink>
+          <ScrollLink
+            to='experience'
+            smooth={true}
+            duration={500}
+            className='navbar-link'
+          >
+            Experience
+          </ScrollLink>
+          <ScrollLink
+            to='blog'
+            smooth={true}
+            duration={500}
+            className='navbar-link'
+          >
+            Blog
+          </ScrollLink>
+          <ScrollLink
+            to='contact'
+            smooth={true}
+            duration={500}
+            className='navbar-link'
+          >
+            Contact
+          </ScrollLink>
         </nav>
 
         {/* Main Sections */}
@@ -46,16 +97,16 @@ const App = () => {
                 <section id='experience'>
                   <Experience />
                 </section>
+                <section id='blog'>
+                  <Blogs /> {/* Updated to use Blogs component */}
+                </section>
                 <section id='contact'>
                   <Contact />
-                </section>
-                <section id='blog'>
-                  <Blog />
                 </section>
               </>
             }
           />
-          <Route path='/blog' element={<Blog />} /> {/* Blog List page */}
+          <Route path='/blog' element={<Blogs />} /> {/* Blog List page */}
           <Route path='/blog/:id' element={<BlogDetail />} />{' '}
           {/* Blog Detail for individual posts */}
         </Routes>

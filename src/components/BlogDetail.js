@@ -4,19 +4,42 @@ import { useParams } from 'react-router-dom';
 const BlogDetail = () => {
   const { id } = useParams();
   const [post, setPost] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Mock fetch, replace with real API call
     const fetchPost = async () => {
-      const response = await fetch(`/api/blogs/${id}`); // Replace with your API endpoint
-      const data = await response.json();
-      setPost(data);
+      try {
+        const response = await fetch('/blogs.json'); // Fetch from local blogs.json file
+        if (!response.ok) {
+          throw new Error('Failed to fetch post');
+        }
+        const data = await response.json();
+        const post = data.find((p) => p.id === parseInt(id)); // Find the post by id
+        if (post) {
+          setPost(post);
+        } else {
+          throw new Error('Post not found');
+        }
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
     };
     fetchPost();
   }, [id]);
 
-  if (!post) {
+  if (loading) {
     return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  if (!post) {
+    return <div>No post found</div>;
   }
 
   return (
