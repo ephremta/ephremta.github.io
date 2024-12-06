@@ -3,15 +3,15 @@ import '../styles/components/Experience.css';
 
 const experienceData = [
   {
-    jobTitle: 'Senior Data Scientist',
+    jobTitle: 'Lead Data Scientist',
     company: 'Kifiya Financial Technologies',
     location: 'Ethiopia',
-    duration: 'Jan 2022 - Present',
+    duration: 'Jan 2022 - November 2024',
     description:
       'Led credit scoring initiatives and implemented MLOps practices for digital lending platforms. Developed alternative data-driven credit scoring models, ensuring operational efficiency and scalability.'
   },
   {
-    jobTitle: 'Data Scientist',
+    jobTitle: 'Senior Data Scientist',
     company: 'Tenacious Intelligence Corporation',
     location: 'Remote',
     duration: 'Mar 2019 - Dec 2021',
