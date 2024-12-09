@@ -10,7 +10,6 @@ const Blog = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        // Fetch blog data from local file (public/blogs.json)
         const response = await fetch('/blogs.json');
         if (!response.ok) {
           throw new Error('Failed to fetch posts');
@@ -27,22 +26,25 @@ const Blog = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className='loading'>Loading...</div>;
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <div className='error'>Error: {error}</div>;
   }
 
   return (
     <div className='blog-container'>
-      <h1 className='blog-header'>Blog</h1>
+      <h1 className='blog-header'>Our Insights</h1>
       <div className='blog-posts'>
         {posts.length === 0 ? (
           <p>No posts available</p>
         ) : (
           posts.map((post) => (
             <div className='blog-post' key={post.id}>
+              <div className='blog-image'>
+                <img src={post.image} alt={post.title} />
+              </div>
               <h2 className='blog-post-title'>
                 <Link to={`/blog/${post.id}`}>{post.title}</Link>
               </h2>

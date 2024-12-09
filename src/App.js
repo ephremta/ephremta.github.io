@@ -1,79 +1,87 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Link as ScrollLink } from 'react-scroll'; // Importing react-scroll Link
+import { Link as ScrollLink, Events } from 'react-scroll';
 import Hero from './components/Hero';
 import About from './components/About';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
-import Experience from './components/Experience';
+import Products from './components/Products';
+import Services from './components/Services';
+import Blogs from './components/Blogs';
+import FAQ from './components/Faq';
+import Industries from './components/Industries';
+import Footer from './components/Footer';
 import BlogDetail from './components/BlogDetail';
-import Blogs from './components/Blogs'; // Updated import for Blogs
-
+import logo from './assets/logo.png';
 import './styles/global.css';
 
 const App = () => {
+  const [scrolled, setScrolled] = React.useState(false);
+  const [activeSection, setActiveSection] = React.useState('hero');
+
+  // Handle scroll event to toggle navbar styles
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Set active section after scroll event
+  React.useEffect(() => {
+    Events.scrollEvent.register('end', (to) => setActiveSection(to));
+    return () => Events.scrollEvent.remove('end');
+  }, []);
+
   return (
     <Router>
       <div className='app'>
         {/* Navigation */}
-        <nav className='navbar'>
-          <ScrollLink
-            to='hero'
-            smooth={true}
-            duration={500}
-            className='navbar-link'
-          >
-            Home
-          </ScrollLink>
-          <ScrollLink
-            to='about'
-            smooth={true}
-            duration={500}
-            className='navbar-link'
-          >
-            About
-          </ScrollLink>
-          <ScrollLink
-            to='skills'
-            smooth={true}
-            duration={500}
-            className='navbar-link'
-          >
-            Skills
-          </ScrollLink>
-          <ScrollLink
-            to='projects'
-            smooth={true}
-            duration={500}
-            className='navbar-link'
-          >
-            Projects
-          </ScrollLink>
-          <ScrollLink
-            to='experience'
-            smooth={true}
-            duration={500}
-            className='navbar-link'
-          >
-            Experience
-          </ScrollLink>
-          <ScrollLink
-            to='blog'
-            smooth={true}
-            duration={500}
-            className='navbar-link'
-          >
-            Blog
-          </ScrollLink>
-          <ScrollLink
-            to='contact'
-            smooth={true}
-            duration={500}
-            className='navbar-link'
-          >
-            Contact
-          </ScrollLink>
+        <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+          {/* Logo */}
+          <a href='/' className='navbar-logo' aria-label='Home'>
+            <img src={logo} alt='Logo' />
+          </a>
+
+          {/* Links */}
+          <ul className='navbar-links'>
+            {[
+              { id: 'hero', label: 'Home' },
+              { id: 'about', label: 'About' },
+              { id: 'services', label: 'Services' },
+              { id: 'products', label: 'Products' },
+              { id: 'industries', label: 'Industries' },
+              { id: 'faq', label: 'FAQ' },
+              { id: 'blog', label: 'Blog' }
+            ].map((section) => (
+              <li key={section.id}>
+                <ScrollLink
+                  to={section.id}
+                  smooth={true}
+                  duration={500}
+                  className={`navbar-link ${activeSection === section.id ? 'active' : ''}`}
+                >
+                  {section.label}
+                </ScrollLink>
+              </li>
+            ))}
+          </ul>
+
+          {/* Search Bar and Buttons */}
+          <div className='navbar-right'>
+            <input
+              type='text'
+              className='search-bar'
+              placeholder='Search...'
+              aria-label='Search'
+            />
+            <button className='navbar-button outlined' aria-label='Sign In'>
+              Sign In
+            </button>
+            <button className='navbar-button primary' aria-label='Call Sales'>
+              Call Sales
+            </button>
+          </div>
         </nav>
 
         {/* Main Sections */}
@@ -82,39 +90,36 @@ const App = () => {
             path='/'
             element={
               <>
-                <section id='hero'>
-                  <Hero />
-                </section>
                 <section id='about'>
                   <About />
                 </section>
-                <section id='skills'>
-                  <Skills />
+                <section id='hero'>
+                  <Hero />
                 </section>
-                <section id='projects'>
-                  <Projects />
+                <section id='services'>
+                  <Services />
                 </section>
-                <section id='experience'>
-                  <Experience />
+                <section id='products'>
+                  <Products />
+                </section>
+                <section id='industries'>
+                  <Industries />
+                </section>
+                <section id='faq'>
+                  <FAQ />
                 </section>
                 <section id='blog'>
-                  <Blogs /> {/* Updated to use Blogs component */}
-                </section>
-                <section id='contact'>
-                  <Contact />
+                  <Blogs />
                 </section>
               </>
             }
           />
-          <Route path='/blog' element={<Blogs />} /> {/* Blog List page */}
-          <Route path='/blog/:id' element={<BlogDetail />} />{' '}
-          {/* Blog Detail for individual posts */}
+          <Route path='/blog' element={<Blogs />} />
+          <Route path='/blog/:id' element={<BlogDetail />} />
         </Routes>
 
         {/* Footer */}
-        <footer className='footer'>
-          <p>© {new Date().getFullYear()} Ephrem T. All rights reserved.</p>
-        </footer>
+        <Footer />
       </div>
     </Router>
   );

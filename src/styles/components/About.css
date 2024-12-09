@@ -1,17 +1,80 @@
-/* src/styles/components/About.css */
-.about {
-  padding: 60px 20px;
-  background-color: #f1faee;
-  color: #1d3557;
-  text-align: center;
+.about-page {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 2rem; /* Reduce padding to bring the section closer to the navbar */
+  background: linear-gradient(90deg, #0d1b2a 50%, #ffffff 50%);
+  color: #ffffff;
+  min-height: auto; /* Remove full height, only height of content */
+  height: 500px; /* Set the height to match the dashboard image size */
 }
 
-.about h2 {
+.about-header {
+  max-width: 600px; /* Ensure the header content doesn't stretch too much */
+  margin-right: 2rem; /* Spacing between the header and image */
+}
+
+.about-header h1 {
   font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.3;
 }
 
-.about p {
-  font-size: 1.2rem;
-  line-height: 1.8;
+.about-header p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.action-buttons .btn-demo,
+.action-buttons .btn-trial {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.action-buttons .btn-demo {
+  background-color: #0066cc;
+  color: white;
+}
+
+.action-buttons .btn-trial {
+  background-color: transparent;
+  color: #0066cc;
+  border: 2px solid #0066cc;
+}
+
+.action-buttons .btn-demo:hover {
+  background-color: #005bb5;
+}
+
+.action-buttons .btn-trial:hover {
+  background-color: #0066cc;
+  color: white;
+}
+
+.about-image {
+  max-width: 600px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.dashboard-image {
+  width: 100%;
+  max-width: 400px; /* Limit image size for better balance */
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
